@@ -1,0 +1,136 @@
+<?php
+
+namespace Noblehouse\FilamentAccounting\Filament\Resources;
+
+use Carbon\Carbon;
+use Filament\Forms;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Form;
+use Filament\Resources\Resource;
+use Filament\Tables;
+use Filament\Tables\Filters\Filter;
+use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Noblehouse\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Pages;
+use Noblehouse\FilamentAccounting\Models\ExpenseType;
+
+class ExpenseTypeResource extends Resource
+{
+    protected static ?string $model = ExpenseType::class;
+
+    protected static ?string $navigationIcon = 'heroicon-o-tag';
+
+    public static function getNavigationGroup(): ?string
+    {
+        return config('filament-accounting.navigation_group', 'Accounting');
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return __('filament-accounting::filament-accounting.Expense Types');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('filament-accounting::filament-accounting.Expense Type');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('filament-accounting::filament-accounting.Expense Types');
+    }
+
+    public static function form(Form $form): Form
+    {
+        return $form
+            ->schema([
+                Forms\Components\TextInput::make('name')
+                    ->label(__('filament-accounting::filament-accounting.Name'))
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\Textarea::make('description')
+                    ->label(__('filament-accounting::filament-accounting.Description'))
+                    ->columnSpanFull(),
+            ]);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return $table
+            ->columns([
+                Tables\Columns\TextColumn::make('name')
+                    ->label(__('filament-accounting::filament-accounting.Name'))
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('description')
+                    ->label(__('filament-accounting::filament-accounting.Description'))
+                    ->limit(50),
+                Tables\Columns\TextColumn::make('expenses_count')
+                    ->counts('expenses')
+                    ->label(__('filament-accounting::filament-accounting.Total Expenses')),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+            ])
+            ->filters([
+                Filter::make('date_range')
+                    ->form([
+                        DatePicker::make('date_from')
+                            ->label(__('filament-accounting::filament-accounting.Date From')),
+                        DatePicker::make('date_until')
+                            ->label(__('filament-accounting::filament-accounting.Date Until')),
+                    ])
+                    ->query(function (Builder $query, array $data): Builder {
+                        return $query
+                            ->when($data['date_from'], function (Builder $query, $date) {
+                                $query->whereHas('expenses', function (Builder $query) use ($date) {
+                                    $query->whereDate('date', '>=', $date);
+                                });
+                            })
+                            ->when($data['date_until'], function (Builder $query, $date) {
+                                $query->whereHas('expenses', function (Builder $query) use ($date) {
+                                    $query->whereDate('date', '<=', $date);
+                                });
+                            });
+                    })
+                    ->indicateUsing(function (array $data): array {
+                        $indicators = [];
+                        if ($data['date_from'] ?? null) {
+                            $indicators[] = __('filament-accounting::filament-accounting.From') . ': ' . Carbon::parse($data['date_from'])->toFormattedDateString();
+                        }
+                        if ($data['date_until'] ?? null) {
+                            $indicators[] = __('filament-accounting::filament-accounting.Until') . ': ' . Carbon::parse($data['date_until'])->toFormattedDateString();
+                        }
+                        return $indicators;
+                    }),
+            ])
+            ->actions([
+                Tables\Actions\EditAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
+            ]);
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => Pages\ListExpenseTypes::route('/'),
+            'create' => Pages\CreateExpenseType::route('/create'),
+            'edit' => Pages\EditExpenseType::route('/{record}/edit'),
+        ];
+    }
+}
