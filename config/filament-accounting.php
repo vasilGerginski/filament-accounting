@@ -9,7 +9,7 @@ return [
     | The navigation group name for all accounting resources.
     |
     */
-    'navigation_group' => 'Счетоводство',
+    'navigation_group' => 'Accounting',
 
     /*
     |--------------------------------------------------------------------------

@@ -125,7 +125,21 @@ class IncomeResource extends Resource
         return $table
             ->columns($columns)
             ->filters([
-                //
+                Tables\Filters\Filter::make('date')
+                    ->form([
+                        Forms\Components\DatePicker::make('from')
+                            ->label(__('filament-accounting::filament-accounting.From')),
+                        Forms\Components\DatePicker::make('until')
+                            ->label(__('filament-accounting::filament-accounting.Until')),
+                    ])
+                    ->query(function ($query, array $data) {
+                        return $query
+                            ->when($data['from'], fn ($query, $date) => $query->whereDate('date', '>=', $date))
+                            ->when($data['until'], fn ($query, $date) => $query->whereDate('date', '<=', $date));
+                    }),
+                Tables\Filters\SelectFilter::make('income_type_id')
+                    ->label(__('filament-accounting::filament-accounting.Income Type'))
+                    ->relationship('incomeType', 'name'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

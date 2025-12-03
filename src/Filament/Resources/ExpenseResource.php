@@ -117,7 +117,27 @@ class ExpenseResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                Tables\Filters\Filter::make('date')
+                    ->form([
+                        Forms\Components\DatePicker::make('from')
+                            ->label(__('filament-accounting::filament-accounting.From')),
+                        Forms\Components\DatePicker::make('until')
+                            ->label(__('filament-accounting::filament-accounting.Until')),
+                    ])
+                    ->query(function ($query, array $data) {
+                        return $query
+                            ->when($data['from'], fn ($query, $date) => $query->whereDate('date', '>=', $date))
+                            ->when($data['until'], fn ($query, $date) => $query->whereDate('date', '<=', $date));
+                    }),
+                Tables\Filters\SelectFilter::make('type')
+                    ->label(__('filament-accounting::filament-accounting.Type'))
+                    ->options([
+                        'CAPEX' => 'CAPEX',
+                        'OPEX' => 'OPEX',
+                    ]),
+                Tables\Filters\SelectFilter::make('expense_type_id')
+                    ->label(__('filament-accounting::filament-accounting.Expense Type'))
+                    ->relationship('expenseType', 'name'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
