@@ -1,11 +1,11 @@
 <?php
 
-namespace Noblehouse\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Widgets;
+namespace VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Widgets;
 
 use Filament\Widgets\ChartWidget;
 use Filament\Widgets\Concerns\InteractsWithPageTable;
-use Noblehouse\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Pages\ListExpenseTypes;
-use Noblehouse\FilamentAccounting\Models\ExpenseType;
+use VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Pages\ListExpenseTypes;
+use VasilGerginski\FilamentAccounting\Models\ExpenseType;
 
 class ExpenseTypeChart extends ChartWidget
 {

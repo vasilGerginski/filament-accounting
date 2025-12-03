@@ -1,10 +1,10 @@
 <?php
 
-namespace Noblehouse\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Pages;
+namespace VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Pages;
 
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
-use Noblehouse\FilamentAccounting\Filament\Resources\ExpenseTypeResource;
+use VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseTypeResource;
 
 class EditExpenseType extends EditRecord
 {

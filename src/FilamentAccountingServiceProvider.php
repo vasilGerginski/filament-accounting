@@ -1,14 +1,14 @@
 <?php
 
-namespace Noblehouse\FilamentAccounting;
+namespace VasilGerginski\FilamentAccounting;
 
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
-use Noblehouse\FilamentAccounting\Filament\Resources\ExpenseResource\Widgets\ExpenseStatsOverview;
-use Noblehouse\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Widgets\ExpenseTypeChart;
-use Noblehouse\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Widgets\ExpenseTypeStatsOverview;
-use Noblehouse\FilamentAccounting\Filament\Resources\IncomeTypeResource\Widgets\IncomeTypeChart;
-use Noblehouse\FilamentAccounting\Filament\Resources\IncomeTypeResource\Widgets\IncomeTypeStatsOverview;
+use VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseResource\Widgets\ExpenseStatsOverview;
+use VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Widgets\ExpenseTypeChart;
+use VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Widgets\ExpenseTypeStatsOverview;
+use VasilGerginski\FilamentAccounting\Filament\Resources\IncomeTypeResource\Widgets\IncomeTypeChart;
+use VasilGerginski\FilamentAccounting\Filament\Resources\IncomeTypeResource\Widgets\IncomeTypeStatsOverview;
 
 class FilamentAccountingServiceProvider extends ServiceProvider
 {
@@ -44,10 +44,10 @@ class FilamentAccountingServiceProvider extends ServiceProvider
 
     protected function registerLivewireComponents(): void
     {
-        Livewire::component('noblehouse.filament-accounting.filament.resources.expense-resource.widgets.expense-stats-overview', ExpenseStatsOverview::class);
-        Livewire::component('noblehouse.filament-accounting.filament.resources.expense-type-resource.widgets.expense-type-stats-overview', ExpenseTypeStatsOverview::class);
-        Livewire::component('noblehouse.filament-accounting.filament.resources.expense-type-resource.widgets.expense-type-chart', ExpenseTypeChart::class);
-        Livewire::component('noblehouse.filament-accounting.filament.resources.income-type-resource.widgets.income-type-stats-overview', IncomeTypeStatsOverview::class);
-        Livewire::component('noblehouse.filament-accounting.filament.resources.income-type-resource.widgets.income-type-chart', IncomeTypeChart::class);
+        Livewire::component('vasil-gerginski.filament-accounting.filament.resources.expense-resource.widgets.expense-stats-overview', ExpenseStatsOverview::class);
+        Livewire::component('vasil-gerginski.filament-accounting.filament.resources.expense-type-resource.widgets.expense-type-stats-overview', ExpenseTypeStatsOverview::class);
+        Livewire::component('vasil-gerginski.filament-accounting.filament.resources.expense-type-resource.widgets.expense-type-chart', ExpenseTypeChart::class);
+        Livewire::component('vasil-gerginski.filament-accounting.filament.resources.income-type-resource.widgets.income-type-stats-overview', IncomeTypeStatsOverview::class);
+        Livewire::component('vasil-gerginski.filament-accounting.filament.resources.income-type-resource.widgets.income-type-chart', IncomeTypeChart::class);
     }
 }

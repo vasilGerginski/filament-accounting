@@ -24,13 +24,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Noblehouse\\FilamentAccounting\\": "src/"
+            "VasilGerginski\\FilamentAccounting\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Noblehouse\\FilamentAccounting\\FilamentAccountingServiceProvider"
+                "VasilGerginski\\FilamentAccounting\\FilamentAccountingServiceProvider"
             ]
         }
     },

@@ -1,6 +1,6 @@
 <?php
 
-namespace Noblehouse\FilamentAccounting\Filament\Resources;
+namespace VasilGerginski\FilamentAccounting\Filament\Resources;
 
 use Carbon\Carbon;
 use Filament\Forms;
@@ -11,8 +11,8 @@ use Filament\Tables;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
-use Noblehouse\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Pages;
-use Noblehouse\FilamentAccounting\Models\ExpenseType;
+use VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Pages;
+use VasilGerginski\FilamentAccounting\Models\ExpenseType;
 
 class ExpenseTypeResource extends Resource
 {

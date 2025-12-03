@@ -1,13 +1,13 @@
 <?php
 
-namespace Noblehouse\FilamentAccounting\Filament\Resources\IncomeTypeResource\Pages;
+namespace VasilGerginski\FilamentAccounting\Filament\Resources\IncomeTypeResource\Pages;
 
 use Filament\Actions;
 use Filament\Pages\Concerns\ExposesTableToWidgets;
 use Filament\Resources\Pages\ListRecords;
-use Noblehouse\FilamentAccounting\Filament\Resources\IncomeTypeResource;
-use Noblehouse\FilamentAccounting\Filament\Resources\IncomeTypeResource\Widgets\IncomeTypeChart;
-use Noblehouse\FilamentAccounting\Filament\Resources\IncomeTypeResource\Widgets\IncomeTypeStatsOverview;
+use VasilGerginski\FilamentAccounting\Filament\Resources\IncomeTypeResource;
+use VasilGerginski\FilamentAccounting\Filament\Resources\IncomeTypeResource\Widgets\IncomeTypeChart;
+use VasilGerginski\FilamentAccounting\Filament\Resources\IncomeTypeResource\Widgets\IncomeTypeStatsOverview;
 
 class ListIncomeTypes extends ListRecords
 {

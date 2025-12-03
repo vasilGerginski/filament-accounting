@@ -1,14 +1,14 @@
 <?php
 
-namespace Noblehouse\FilamentAccounting\Filament\Resources;
+namespace VasilGerginski\FilamentAccounting\Filament\Resources;
 
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Noblehouse\FilamentAccounting\Filament\Resources\IncomeResource\Pages;
-use Noblehouse\FilamentAccounting\Models\Income;
+use VasilGerginski\FilamentAccounting\Filament\Resources\IncomeResource\Pages;
+use VasilGerginski\FilamentAccounting\Models\Income;
 
 class IncomeResource extends Resource
 {

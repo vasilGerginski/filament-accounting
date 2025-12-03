@@ -1,13 +1,13 @@
 <?php
 
-namespace Noblehouse\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Pages;
+namespace VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Pages;
 
 use Filament\Actions;
 use Filament\Pages\Concerns\ExposesTableToWidgets;
 use Filament\Resources\Pages\ListRecords;
-use Noblehouse\FilamentAccounting\Filament\Resources\ExpenseTypeResource;
-use Noblehouse\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Widgets\ExpenseTypeChart;
-use Noblehouse\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Widgets\ExpenseTypeStatsOverview;
+use VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseTypeResource;
+use VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Widgets\ExpenseTypeChart;
+use VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Widgets\ExpenseTypeStatsOverview;
 
 class ListExpenseTypes extends ListRecords
 {

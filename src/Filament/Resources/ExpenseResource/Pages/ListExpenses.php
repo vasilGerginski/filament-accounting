@@ -1,11 +1,11 @@
 <?php
 
-namespace Noblehouse\FilamentAccounting\Filament\Resources\ExpenseResource\Pages;
+namespace VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseResource\Pages;
 
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
-use Noblehouse\FilamentAccounting\Filament\Resources\ExpenseResource;
-use Noblehouse\FilamentAccounting\Filament\Resources\ExpenseResource\Widgets\ExpenseStatsOverview;
+use VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseResource;
+use VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseResource\Widgets\ExpenseStatsOverview;
 
 class ListExpenses extends ListRecords
 {

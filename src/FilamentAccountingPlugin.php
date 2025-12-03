@@ -1,13 +1,13 @@
 <?php
 
-namespace Noblehouse\FilamentAccounting;
+namespace VasilGerginski\FilamentAccounting;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
-use Noblehouse\FilamentAccounting\Filament\Resources\ExpenseResource;
-use Noblehouse\FilamentAccounting\Filament\Resources\ExpenseTypeResource;
-use Noblehouse\FilamentAccounting\Filament\Resources\IncomeResource;
-use Noblehouse\FilamentAccounting\Filament\Resources\IncomeTypeResource;
+use VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseResource;
+use VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseTypeResource;
+use VasilGerginski\FilamentAccounting\Filament\Resources\IncomeResource;
+use VasilGerginski\FilamentAccounting\Filament\Resources\IncomeTypeResource;
 
 class FilamentAccountingPlugin implements Plugin
 {

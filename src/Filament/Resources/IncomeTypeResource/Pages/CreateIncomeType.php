@@ -1,9 +1,9 @@
 <?php
 
-namespace Noblehouse\FilamentAccounting\Filament\Resources\IncomeTypeResource\Pages;
+namespace VasilGerginski\FilamentAccounting\Filament\Resources\IncomeTypeResource\Pages;
 
 use Filament\Resources\Pages\CreateRecord;
-use Noblehouse\FilamentAccounting\Filament\Resources\IncomeTypeResource;
+use VasilGerginski\FilamentAccounting\Filament\Resources\IncomeTypeResource;
 
 class CreateIncomeType extends CreateRecord
 {

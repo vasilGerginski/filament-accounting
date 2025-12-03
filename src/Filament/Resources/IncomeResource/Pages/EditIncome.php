@@ -1,10 +1,10 @@
 <?php
 
-namespace Noblehouse\FilamentAccounting\Filament\Resources\IncomeResource\Pages;
+namespace VasilGerginski\FilamentAccounting\Filament\Resources\IncomeResource\Pages;
 
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
-use Noblehouse\FilamentAccounting\Filament\Resources\IncomeResource;
+use VasilGerginski\FilamentAccounting\Filament\Resources\IncomeResource;
 
 class EditIncome extends EditRecord
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Noblehouse\FilamentAccounting\Filament\Resources\ExpenseResource\Widgets;
+namespace VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseResource\Widgets;
 
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
-use Noblehouse\FilamentAccounting\Models\Expense;
+use VasilGerginski\FilamentAccounting\Models\Expense;
 
 class ExpenseStatsOverview extends BaseWidget
 {

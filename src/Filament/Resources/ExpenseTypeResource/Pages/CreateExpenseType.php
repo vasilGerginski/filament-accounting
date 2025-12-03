@@ -1,9 +1,9 @@
 <?php
 
-namespace Noblehouse\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Pages;
+namespace VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Pages;
 
 use Filament\Resources\Pages\CreateRecord;
-use Noblehouse\FilamentAccounting\Filament\Resources\ExpenseTypeResource;
+use VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseTypeResource;
 
 class CreateExpenseType extends CreateRecord
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Noblehouse\FilamentAccounting\Models;
+namespace VasilGerginski\FilamentAccounting\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

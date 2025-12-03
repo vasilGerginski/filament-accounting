@@ -61,7 +61,7 @@ php artisan vendor:publish --tag="filament-accounting-config"
 In your `AdminPanelProvider.php`:
 
 ```php
-use Noblehouse\FilamentAccounting\FilamentAccountingPlugin;
+use VasilGerginski\FilamentAccounting\FilamentAccountingPlugin;
 
 public function panel(Panel $panel): Panel
 {

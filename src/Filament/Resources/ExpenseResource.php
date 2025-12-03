@@ -1,6 +1,6 @@
 <?php
 
-namespace Noblehouse\FilamentAccounting\Filament\Resources;
+namespace VasilGerginski\FilamentAccounting\Filament\Resources;
 
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -9,8 +9,8 @@ use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Noblehouse\FilamentAccounting\Filament\Resources\ExpenseResource\Pages;
-use Noblehouse\FilamentAccounting\Models\Expense;
+use VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseResource\Pages;
+use VasilGerginski\FilamentAccounting\Models\Expense;
 
 class ExpenseResource extends Resource
 {

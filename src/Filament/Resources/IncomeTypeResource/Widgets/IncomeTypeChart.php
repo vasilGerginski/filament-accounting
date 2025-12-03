@@ -1,11 +1,11 @@
 <?php
 
-namespace Noblehouse\FilamentAccounting\Filament\Resources\IncomeTypeResource\Widgets;
+namespace VasilGerginski\FilamentAccounting\Filament\Resources\IncomeTypeResource\Widgets;
 
 use Filament\Widgets\ChartWidget;
 use Filament\Widgets\Concerns\InteractsWithPageTable;
-use Noblehouse\FilamentAccounting\Filament\Resources\IncomeTypeResource\Pages\ListIncomeTypes;
-use Noblehouse\FilamentAccounting\Models\IncomeType;
+use VasilGerginski\FilamentAccounting\Filament\Resources\IncomeTypeResource\Pages\ListIncomeTypes;
+use VasilGerginski\FilamentAccounting\Models\IncomeType;
 
 class IncomeTypeChart extends ChartWidget
 {

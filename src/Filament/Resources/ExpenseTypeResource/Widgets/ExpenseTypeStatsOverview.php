@@ -1,12 +1,12 @@
 <?php
 
-namespace Noblehouse\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Widgets;
+namespace VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Widgets;
 
 use Filament\Widgets\Concerns\InteractsWithPageTable;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
-use Noblehouse\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Pages\ListExpenseTypes;
-use Noblehouse\FilamentAccounting\Models\ExpenseType;
+use VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Pages\ListExpenseTypes;
+use VasilGerginski\FilamentAccounting\Models\ExpenseType;
 
 class ExpenseTypeStatsOverview extends BaseWidget
 {
