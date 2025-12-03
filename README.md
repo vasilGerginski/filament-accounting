@@ -17,7 +17,7 @@ A Filament v3 plugin for managing expenses, incomes, and their types in Laravel 
 ### From Packagist (when published)
 
 ```bash
-composer require noblehouse/filament-accounting
+composer require vasilgerginski/filament-accounting
 ```
 
 ### Local Development
@@ -29,7 +29,7 @@ Add the repository to your `composer.json`:
     "repositories": [
         {
             "type": "path",
-            "url": "packages/noblehouse/filament-accounting"
+            "url": "packages/vasilgerginski/filament-accounting"
         }
     ]
 }
@@ -38,7 +38,7 @@ Add the repository to your `composer.json`:
 Then require the package:
 
 ```bash
-composer require noblehouse/filament-accounting:@dev
+composer require vasilgerginski/filament-accounting:@dev
 ```
 
 ## Setup
