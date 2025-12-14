@@ -12,12 +12,13 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use VasilGerginski\FilamentAccounting\Filament\Resources\IncomeResource\Pages;
 use VasilGerginski\FilamentAccounting\Models\Income;
+use BackedEnum;
 
 class IncomeResource extends Resource
 {
     protected static ?string $model = Income::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-arrow-trending-up';
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-arrow-trending-up';
 
     public static function getNavigationGroup(): ?string
     {

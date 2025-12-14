@@ -14,12 +14,13 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseResource\Pages;
 use VasilGerginski\FilamentAccounting\Models\Expense;
+use BackedEnum;
 
 class ExpenseResource extends Resource
 {
     protected static ?string $model = Expense::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-currency-dollar';
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-currency-dollar';
 
     public static function getNavigationGroup(): ?string
     {

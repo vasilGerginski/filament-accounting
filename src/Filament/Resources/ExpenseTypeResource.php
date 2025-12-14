@@ -16,12 +16,13 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use VasilGerginski\FilamentAccounting\Filament\Resources\ExpenseTypeResource\Pages;
 use VasilGerginski\FilamentAccounting\Models\ExpenseType;
+use BackedEnum;
 
 class ExpenseTypeResource extends Resource
 {
     protected static ?string $model = ExpenseType::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-tag';
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-tag';
 
     public static function getNavigationGroup(): ?string
     {

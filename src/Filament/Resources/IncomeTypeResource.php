@@ -16,12 +16,13 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use VasilGerginski\FilamentAccounting\Filament\Resources\IncomeTypeResource\Pages;
 use VasilGerginski\FilamentAccounting\Models\IncomeType;
+use BackedEnum;
 
 class IncomeTypeResource extends Resource
 {
     protected static ?string $model = IncomeType::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-banknotes';
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-banknotes';
 
     public static function getNavigationGroup(): ?string
     {
