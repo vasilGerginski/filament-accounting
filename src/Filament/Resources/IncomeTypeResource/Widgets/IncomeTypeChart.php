@@ -13,7 +13,7 @@ class IncomeTypeChart extends ChartWidget
 
     public ?array $filters = [];
 
-    protected static ?string $heading = null;
+    protected ?string $heading = null;
 
     protected static ?int $sort = 2;
 
