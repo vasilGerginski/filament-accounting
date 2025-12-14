@@ -12,8 +12,11 @@ use VasilGerginski\FilamentAccounting\Filament\Resources\IncomeTypeResource;
 class FilamentAccountingPlugin implements Plugin
 {
     protected bool $hasExpenses = true;
+
     protected bool $hasExpenseTypes = true;
+
     protected bool $hasIncomes = true;
+
     protected bool $hasIncomeTypes = true;
 
     public function getId(): string

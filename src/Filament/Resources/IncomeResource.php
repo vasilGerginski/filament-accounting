@@ -2,9 +2,12 @@
 
 namespace VasilGerginski\FilamentAccounting\Filament\Resources;
 
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
 use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
 use VasilGerginski\FilamentAccounting\Filament\Resources\IncomeResource\Pages;
@@ -36,9 +39,9 @@ class IncomeResource extends Resource
         return __('filament-accounting::filament-accounting.Incomes');
     }
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        $schema = [
+        $components = [
             Forms\Components\Select::make('income_type_id')
                 ->relationship('incomeType', 'name')
                 ->required()
@@ -62,10 +65,10 @@ class IncomeResource extends Resource
                 ->label($userLabel ? __($userLabel) : __('filament-accounting::filament-accounting.Client'))
                 ->placeholder(__('filament-accounting::filament-accounting.Select a user (optional)'));
 
-            $schema[] = $userSelect;
+            $components[] = $userSelect;
         }
 
-        $schema = array_merge($schema, [
+        $components = array_merge($components, [
             Forms\Components\TextInput::make('amount')
                 ->label(__('filament-accounting::filament-accounting.Amount'))
                 ->required()
@@ -79,7 +82,7 @@ class IncomeResource extends Resource
                 ->columnSpanFull(),
         ]);
 
-        return $form->schema($schema);
+        return $schema->components($components);
     }
 
     public static function table(Table $table): Table
@@ -141,12 +144,12 @@ class IncomeResource extends Resource
                     ->label(__('filament-accounting::filament-accounting.Income Type'))
                     ->relationship('incomeType', 'name'),
             ])
-            ->actions([
-                Tables\Actions\EditAction::make(),
+            ->recordActions([
+                EditAction::make(),
             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
                 ]),
             ]);
     }

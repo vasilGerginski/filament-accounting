@@ -15,29 +15,29 @@ class FilamentAccountingServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/filament-accounting.php',
+            __DIR__.'/../config/filament-accounting.php',
             'filament-accounting'
         );
     }
 
     public function boot(): void
     {
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
-        $this->loadTranslationsFrom(__DIR__ . '/../lang', 'filament-accounting');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadTranslationsFrom(__DIR__.'/../lang', 'filament-accounting');
 
         $this->registerLivewireComponents();
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/filament-accounting.php' => config_path('filament-accounting.php'),
+                __DIR__.'/../config/filament-accounting.php' => config_path('filament-accounting.php'),
             ], 'filament-accounting-config');
 
             $this->publishes([
-                __DIR__ . '/../lang' => $this->app->langPath('vendor/filament-accounting'),
+                __DIR__.'/../lang' => $this->app->langPath('vendor/filament-accounting'),
             ], 'filament-accounting-translations');
 
             $this->publishesMigrations([
-                __DIR__ . '/../database/migrations' => database_path('migrations'),
+                __DIR__.'/../database/migrations' => database_path('migrations'),
             ], 'filament-accounting-migrations');
         }
     }

@@ -62,9 +62,9 @@ class ExpenseTypeStatsOverview extends BaseWidget
 
             $stats[] = Stat::make(
                 $expenseType->name,
-                number_format($total, 2) . ' ' . $currencyLabel
+                number_format($total, 2).' '.$currencyLabel
             )
-                ->description($percentage . '% ' . __('filament-accounting::filament-accounting.of total expenses'))
+                ->description($percentage.'% '.__('filament-accounting::filament-accounting.of total expenses'))
                 ->descriptionIcon('heroicon-m-tag')
                 ->color($this->getColorByRank($index));
         }
@@ -75,6 +75,7 @@ class ExpenseTypeStatsOverview extends BaseWidget
     protected function getColorByRank(int $rank): string
     {
         $colors = ['danger', 'warning', 'info', 'success', 'primary', 'gray'];
+
         return $colors[$rank % count($colors)];
     }
 }

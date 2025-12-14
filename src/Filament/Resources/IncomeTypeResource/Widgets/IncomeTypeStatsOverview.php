@@ -62,9 +62,9 @@ class IncomeTypeStatsOverview extends BaseWidget
 
             $stats[] = Stat::make(
                 $incomeType->name,
-                number_format($total, 2) . ' ' . $currencyLabel
+                number_format($total, 2).' '.$currencyLabel
             )
-                ->description($percentage . '% ' . __('filament-accounting::filament-accounting.of total income'))
+                ->description($percentage.'% '.__('filament-accounting::filament-accounting.of total income'))
                 ->descriptionIcon('heroicon-m-tag')
                 ->color($this->getColorByRank($index));
         }
@@ -75,6 +75,7 @@ class IncomeTypeStatsOverview extends BaseWidget
     protected function getColorByRank(int $rank): string
     {
         $colors = ['success', 'info', 'warning', 'primary', 'danger', 'gray'];
+
         return $colors[$rank % count($colors)];
     }
 }

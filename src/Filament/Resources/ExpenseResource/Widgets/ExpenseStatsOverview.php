@@ -18,19 +18,19 @@ class ExpenseStatsOverview extends BaseWidget
         $opexTotal = Expense::where('type', 'OPEX')->sum('price');
 
         return [
-            Stat::make(__('filament-accounting::filament-accounting.Total Expenses'), $currencySymbol . number_format($totalExpenses, 2))
+            Stat::make(__('filament-accounting::filament-accounting.Total Expenses'), $currencySymbol.number_format($totalExpenses, 2))
                 ->description(__('filament-accounting::filament-accounting.All expenses combined'))
                 ->descriptionIcon('heroicon-m-currency-euro')
                 ->color('success'),
-            Stat::make(__('filament-accounting::filament-accounting.Average Expense'), $currencySymbol . number_format($averageExpense, 2))
+            Stat::make(__('filament-accounting::filament-accounting.Average Expense'), $currencySymbol.number_format($averageExpense, 2))
                 ->description(__('filament-accounting::filament-accounting.Per expense'))
                 ->descriptionIcon('heroicon-m-calculator')
                 ->color('info'),
-            Stat::make(__('filament-accounting::filament-accounting.CAPEX Total'), $currencySymbol . number_format($capexTotal, 2))
+            Stat::make(__('filament-accounting::filament-accounting.CAPEX Total'), $currencySymbol.number_format($capexTotal, 2))
                 ->description(__('filament-accounting::filament-accounting.Capital expenditures'))
                 ->descriptionIcon('heroicon-m-building-office')
                 ->color('warning'),
-            Stat::make(__('filament-accounting::filament-accounting.OPEX Total'), $currencySymbol . number_format($opexTotal, 2))
+            Stat::make(__('filament-accounting::filament-accounting.OPEX Total'), $currencySymbol.number_format($opexTotal, 2))
                 ->description(__('filament-accounting::filament-accounting.Operating expenditures'))
                 ->descriptionIcon('heroicon-m-arrow-trending-up')
                 ->color('primary'),

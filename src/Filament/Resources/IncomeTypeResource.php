@@ -3,10 +3,13 @@
 namespace VasilGerginski\FilamentAccounting\Filament\Resources;
 
 use Carbon\Carbon;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
 use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
@@ -40,10 +43,10 @@ class IncomeTypeResource extends Resource
         return __('filament-accounting::filament-accounting.Income Types');
     }
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
+        return $schema
+            ->components([
                 Forms\Components\TextInput::make('name')
                     ->label(__('filament-accounting::filament-accounting.Name'))
                     ->required()
@@ -100,20 +103,21 @@ class IncomeTypeResource extends Resource
                     ->indicateUsing(function (array $data): array {
                         $indicators = [];
                         if ($data['date_from'] ?? null) {
-                            $indicators[] = __('filament-accounting::filament-accounting.From') . ': ' . Carbon::parse($data['date_from'])->toFormattedDateString();
+                            $indicators[] = __('filament-accounting::filament-accounting.From').': '.Carbon::parse($data['date_from'])->toFormattedDateString();
                         }
                         if ($data['date_until'] ?? null) {
-                            $indicators[] = __('filament-accounting::filament-accounting.Until') . ': ' . Carbon::parse($data['date_until'])->toFormattedDateString();
+                            $indicators[] = __('filament-accounting::filament-accounting.Until').': '.Carbon::parse($data['date_until'])->toFormattedDateString();
                         }
+
                         return $indicators;
                     }),
             ])
-            ->actions([
-                Tables\Actions\EditAction::make(),
+            ->recordActions([
+                EditAction::make(),
             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
                 ]),
             ]);
     }
