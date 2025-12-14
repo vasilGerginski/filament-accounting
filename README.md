@@ -1,6 +1,13 @@
 # Filament Accounting
 
-A Filament v3 plugin for managing expenses, incomes, and their types in Laravel applications.
+A Filament plugin for managing expenses, incomes, and their types in Laravel applications.
+
+## Requirements
+
+| Version | Filament | Laravel | PHP |
+|---------|----------|---------|-----|
+| 2.x     | ^4.0     | ^11.28 \| ^12.0 | ^8.2 |
+| 1.x     | ^3.0     | ^10.0 \| ^11.0 | ^8.1 |
 
 ## Features
 
